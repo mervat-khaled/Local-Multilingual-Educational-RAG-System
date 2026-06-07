@@ -23,7 +23,7 @@ A lightweight, localized, and secure Retrieval-Augmented Generation (RAG) agent 
 * **Dockerized Execution Environment:** Isolated the LLM infrastructure using a **Dockerized Ollama image**, standardizing environment dependencies and optimizing container-level CPU resource mapping.
 * **CPU-Optimized Generation:** Selected the ultra-lightweight **qwen2.5:1.5b** model running locally. This 1.5B parameter profile provides rapid token generation on a 4-core CPU while retaining solid multilingual reasoning capabilities.
 * **Cross-Lingual Capability:** Engineered system prompts using **LangChain Ollama** to allow cross-lingual retrieval. The model successfully processes incoming queries in either Arabic or English, searches the English vector index, synthesizes the context, and outputs its final pedagogical response in the student's preferred language.
-* **User Interface:** Built a clean, responsive web interface using **Gradio** to ensure low-latency interactions between students and the local backend.
+* **User Interface:** Built a clean, responsive web interface using **Gradio**.
 
 ## Dual-Layer Evaluation Framework
 
