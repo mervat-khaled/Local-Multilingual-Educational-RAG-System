@@ -1,0 +1,705 @@
+question,answer,execution_time_seconds,retrieved_context
+"اشرح retriever, بالأمثلة",أنا أعتذر، ولكن في هذه الحالة لا يمكنني مساعدتك. المعلومات التي تحتاجها لا تظهر في المحتوى الذي تم تحميل.,197.31,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Miss valuable information
+●
+No perfect solution
+Retriever usually doesn’t perfectly rank documents
+●
+Monitor and experiment
+Change settings to find what works
+19
+
+Retrieval Augmented Generation
+9"
+"explain what the Retriever is, with examples","The Retriever is a component of an AI system that helps retrieve relevant information from knowledge bases or databases to improve the performance and quality of language generation tasks. It manages a knowledge base containing trusted information and finds the most relevant documents for specific queries.
+
+Here are some examples:
+
+1. **Relevance vs Irrelevance Tradeoff**: Imagine you're trying to find an article about how to make homemade pizza. You could ask your AI assistant, ""What is the best recipe for making pizza?"" The Retriever would likely return a document that provides comprehensive tips on making various types of pizzas, including homemade ones.
+
+2. **Returning Every Document?** Suppose you want to know more about different types of dogs. If you asked, ""What are all the breeds of dogs,"" the Retriever might return every single article it has ever seen about dog breeds, which could be thousands or even millions of documents. This approach would cover everything but wouldn't necessarily provide the most relevant information for your specific query.
+
+3. **Returning the Single Highest Ranked Document**: If you asked, ""What is the best way to start a business?"" The Retriever might return a document that provides the most comprehensive and up-to-date advice on starting a successful business, rather than just one article about dog breeds or pizza recipes.
+
+4. **No Perfect Solution**: Sometimes there's no perfect solution because finding the right balance between relevance and irrelevance can be challenging. For example, if you're looking for information about climate change but don't want to see articles that are too focused on politics, the Retriever might struggle to find just the right mix of relevant and irrelevant documents.
+
+5. **Monitoring and Experimentation**: The Retriever is designed to monitor its performance and experiment with different settings to improve how it ranks documents. This means tweaking parameters like ""relevance vs irrelevance"" or adjusting the number of documents returned, so that over time, it becomes better at finding the most relevant information for your queries.
+
+In summary, the Retriever helps you find exactly what you need by balancing relevance and other factors to provide the best possible answers.",405.84,"help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Retriever
+●
+Manages knowledge base of trusted 
+information
+●
+Finds the most relevant Information 
+and shares information with the LLM
+●
+Improves generation
+Retriever
+Knowledge 
+Base
+8
+
+Retriever Tradeoffs
+●
+Relevance vs irrelevance
+Need to return relevant documents and withhold irrelevant ones
+●
+Return every document?
+Mountains of irrelevant docs. Wastes context window
+●
+Return the single highest ranked document?
+Miss valuable information
+●
+No perfect solution
+
+Miss valuable information
+●
+No perfect solution
+Retriever usually doesn’t perfectly rank documents
+●
+Monitor and experiment
+Change settings to find what works
+19"
+اعمل مقارنة ما بين Keyword Search و Semantic Search,"Keyword search focuses on matching exact words in a query with documents that contain those same keywords. It's very sensitive to these specific terms, making it highly effective for tasks where precision is crucial.
+
+Semantic search, on the other hand, looks at the meaning of the query and finds documents that have similar meanings, even if they don't use exactly the same words. This approach can be less precise but more flexible because it doesn't require exact matches to find relevant results.
+
+In practice:
+- **Keyword Search** is great for tasks where you need very specific information. For example, if someone asks ""What are the ingredients in pizza?"" a keyword search would return documents that mention exactly those words.
+- **Semantic Search** excels when precision isn't as important. It's useful for general queries or when there aren't many exact matches available. For instance, asking ""How do I start a business?"" Semantic Search might find articles about starting businesses without needing to match the specific keywords.
+
+Both methods have their strengths and weaknesses depending on what you're trying to achieve with your search query.",686.87,"Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search
+
+Semantic search introduction
+44
+
+Keyword Search
+Ensures sensitivity to exact words 
+the user included in the prompt
+Semantic Search
+Finds documents with similar meaning, 
+even without matching words
+High-performing retrievers 
+balance all three techniques 
+based on project needs.
+Hybrid Search
+Metadata Filtering
+
+β = 0.8
+Semantic Search
+80%
+Keyword Search
+20%
+Beta: Weighting Semantic vs. Keyword
+β = 0.7
+Semantic Search
+70%
+Keyword Search
+30%
+If exact keyword matching is important, set a lower beta
+57"
+اعمل مقارنة ما بين البحث بالكلمات والبحث بالمعنى..,"البحث بالكلمات هو عملية تتم بتحديد الكلمات الرئيسية أو المفتاحات التي يرغب فيها المستخدم في البحث، ثم يتم العثور على الأشياء التي تحتوي عليها هذه الكلمات. هذا النوع من البحث يكون مفيدًا للغاية عندما يكون هناك قدرة كبيرة على تحديد الكلمات بشكل دقيق وصحيح.
+
+بينما البحث بالمعنى هو عملية تتم بتحديد المعنى العام أو الشامل للكلمة الرئيسية التي يرغب فيها المستخدم في البحث، ثم يتم العثور على الأشياء التي تحتوي عليها هذه الكلمة من حيث المعنى. هذا النوع من البحث يكون مفيدًا عندما يكون هناك قدرة كبيرة على تحديد الكلمات بشكل عام وصحيح، وليس فقط على الكلمات المحددة.
+
+في الواقع:
+- **بحث بالكلمات** هو فعال للغاية في الأوقات التي تحتاج فيها إلى المعلومات الأكثر دقة والكاملة. على سبيل المثال، إذا طلب شخص ""أين يمكنني العثور على الطريقة لصنع البيتزا؟""، البحث بالكلمات سيقدم النتائج التي تحتوي على الكلمات الرئيسية التي يبحث عنها.
+- **بحث بالمعنى** هو فعال للغاية في الأوقات التي تحتاج فيها إلى المعلومات العامة أو الشاملة. على سبيل المثال، إذا طلب شخص ""كيف يمكنني بدء نشاط مربح؟""، البحث بالمعنى قد يقدم النتائج حول كيفية بدء الأعمال التجارية دون الحاجة إلى تحديد الكلمات بشكل دقيق وصحيح.",786.36,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Respond based on 
+your knowledge
+Synthesize 
+research
+2
+
+Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search"
+make a comparison about Euclidean distance and cosine similarity  ,"Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=820). Ensure Ollama container is running at http://localhost:11434/api/chat.",820.55,"Measuring Vector Distance
+Cosine Similarity
+θ
+Looks at the similarity in the direction of 
+two vectors, regardless of whether they're 
+close to one another in space
+[100, 100]
+[10, 10]
+0
+-1
+Opposite 
+direction
+Perpendicular
+1
+Same 
+direction
+53
+
+Measuring Vector Distance
+Dot product
+Cosine Similarity
+θ
+Higher values, closer vectors
+0
+-1
+Opposite 
+direction
+Perpendicular
+1
+Same 
+direction
+0
+Negative
+Opposite 
+direction
+Perpendicular
+Positive
+Same 
+direction
+55
+
+Measuring Vector Distance
+Euclidean Distance
+Measures how far apart two vectors are by 
+drawing a straight line from one vector to 
+the other -  the shortest possible distance 
+between them.
+52
+
+Measuring Vector Distance
+Measures the length of the projection of 
+one vector onto another.
+Dot product
+0
+Negative
+Opposite 
+direction
+Perpendicular
+Positive
+Same 
+direction
+54"
+explain Euclidean distance and cosine similarity  ,"Euclidean Distance:
+The Euclidean distance between two vectors measures the straight-line distance from one vector to another in a multi-dimensional space. It's calculated as the square root of the sum of squared differences between corresponding elements of the vectors. This metric is useful when you want to find how close or far apart two vectors are, regardless of their direction.
+
+Cosine Similarity:
+Cosine similarity measures the cosine of the angle between two vectors in a multi-dimensional space. It's calculated as the dot product of the vectors divided by the magnitudes (lengths) of the vectors. This metric is useful when you want to find how similar or dissimilar two vectors are, but it doesn't care about their direction.
+
+In summary:
+- **Euclidean Distance** measures the straight-line distance between two points in a multi-dimensional space.
+- **Cosine Similarity** measures the angle between two vectors in a multi-dimensional space.",566.25,"Measuring Vector Distance
+Cosine Similarity
+θ
+Looks at the similarity in the direction of 
+two vectors, regardless of whether they're 
+close to one another in space
+[100, 100]
+[10, 10]
+0
+-1
+Opposite 
+direction
+Perpendicular
+1
+Same 
+direction
+53
+
+Measuring Vector Distance
+Dot product
+Cosine Similarity
+θ
+Higher values, closer vectors
+0
+-1
+Opposite 
+direction
+Perpendicular
+1
+Same 
+direction
+0
+Negative
+Opposite 
+direction
+Perpendicular
+Positive
+Same 
+direction
+55
+
+Measuring Vector Distance
+Euclidean Distance
+Measures how far apart two vectors are by 
+drawing a straight line from one vector to 
+the other -  the shortest possible distance 
+between them.
+52
+
+Measuring Vector Distance
+Measures the length of the projection of 
+one vector onto another.
+Dot product
+0
+Negative
+Opposite 
+direction
+Perpendicular
+Positive
+Same 
+direction
+54"
+عظيم.. اشرح الموجود في صفحة ٥٧,عذراً، ولكنني لا أستطيع العثور على الصفحة رقم 57 في الوثيقة المقدمة. يرجى مراجعة الصفحة أو الاتصال بقائمتك للحصول على المعلومات التي تبحث عنها.,702.28,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Individual Words
+cat 
+happy
+Word 
+Embedding 
+Model
+Sentences
+The weather is nice
+What a lovely day
+Sentence 
+Embedding 
+Model
+Documents
+Document 
+Embedding 
+Model
+50
+
+Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search"
+Explain ANN Algorithm..,"The Approximate Nearest Neighbor (ANN) algorithm is a type of machine learning technique used to find the nearest neighbors in high-dimensional spaces efficiently. It's particularly useful when dealing with large datasets where exact nearest neighbor queries can be computationally expensive or impractical.
+
+### Key Concepts:
+
+1. **High-Dimensional Space**: The ANN algorithm operates in a multi-dimensional space, which means it deals with vectors that have many more dimensions than the typical 2D or 3D spaces we are used to visualizing. This is common when dealing with large datasets like images, text documents, or high-frequency financial data.
+
+2. **Nearest Neighbor Search**: The goal of ANN algorithms is to efficiently find the nearest neighbor (or neighbors) for a given query point in this high-dimensional space. This means finding the vector(s) that are closest to the input vector being queried.
+
+3. **Approximation vs Exactness**: Unlike exact nearest neighbor search, which requires checking every possible pair of vectors, ANN algorithms approximate the answer by considering only a subset of potential neighbors. This makes it much faster and more efficient for large datasets.
+
+4. **Distance Measures**: The distance between two points in high-dimensional space is typically measured using various metrics like Euclidean distance or cosine similarity. These measures help determine how close two points are to each other in the multi-dimensional space.
+
+5. **Applications**:
+   - **Image Recognition**: Finding similar images.
+   - **Recommendation Systems**: Recommending items that are similar to a user's preferences.
+   - **Bioinformatics**: Identifying related genes or proteins based on their sequences.
+   - **Neural Networks**: Used in various neural network architectures for feature extraction and classification.
+
+### Example:
+
+Imagine you have a dataset of images, each represented as a vector (a set of pixel values). You want to find the image that is most similar to a specific query image. Using an ANN algorithm, you can efficiently search through this high-dimensional space and quickly identify the closest image without having to check every single pair.
+
+### Implementation:
+
+ANN algorithms often use techniques like locality-sensitive hashing (LSH), random projections, or other dimensionality reduction methods to map the high-dimensional vectors into a lower-dimensional space where nearest neighbor queries become much faster. This makes them suitable for real-time applications and large-scale datasets.
+
+In summary, ANN algorithms provide an efficient way to find approximate nearest neighbors in high-dimensional spaces by leveraging techniques like approximation, distance measures, and dimensionality reduction, making them valuable tools in various fields of data science and machine learning.",1052.87,"inefficient KNN search
+Optimized for ANN Search
+Designed to build HNSW indexes and compute vector distances.
+They scale well and operate quickly
+Weaviate
+Popular open-source vector database you’ll use in this course
+76
+
+Approximate nearest neighbors 
+algorithms (ANN)
+58
+
+Typical Vector Database Operations
+●
+Database setup
+●
+Load documents
+●
+Create sparse vectors for keyword search
+●
+Create dense vectors for semantic search
+●
+Create HNSW index to power ANN algorithm
+●
+Run searches!
+77
+
+Vector 
+Database
+Vector Database
+Designed for Vector Search
+Designed to store high-dimensional vectors and perform vector
+search using ANN algorithms
+Outperform Relational Databases
+Relational databases perform vector search similarly to an
+inefficient KNN search
+Optimized for ANN Search"
+لماذا تهلوس خوارزميات اللغة الكبيرة,"خوارزميات اللغة الكبيرة (Big-Data) تعاني من مشاكل هائلة مثل التخزين الضخم، القدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة. هذه الخوارزميات تستخدم مصطلحات مثل ""Big Data"" و ""Hadoop"" لوصفها.
+
+1. **تخزين الضخم**: Big-Data يتطلب تخزين ضخم للبيانات، مما يعني أن البيانات تتضمن العديد من الصفوف والبيانات التي لا تحتاج إلى التحليل الفوري. هذا يخلق مشكلة كبيرة في القدرة على التعامل مع هذه البيانات.
+
+2. **سرعة المعالجة**: Big-Data يعتمد بشكل كبير على السرعة في المعالجة، حيث يتم استخدام تقنيات مثل ""MapReduce"" لتحليل البيانات بسرعة عالية. ولكن هذه التقنيات تتطلب أن تكون البيانات متاحة بشكل سريع وسهلة للتعامل معها.
+
+3. **قدرة التعامل مع البيانات الهائلة**: Big-Data يعتمد على القدرة على التعامل مع بيانات هائلة، حيث يتم استخدام تقنيات مثل ""Hadoop"" لتحليل البيانات بسرعة عالية وسهولة في التعامل معها.
+
+من هنا يأتي السؤال عن ""هلوس الخوارزميات الكبيرة"". هذه الخوارزميات تعاني من مشاكل كبيرة مثل التخزين الضخم والقدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة. ومع ذلك، Big-Data هو جزء من الحلول التي تقدمها الشركات لمعالجة البيانات الكبيرة، مما يعني أن الخوارزميات الكبيرة هي جزء من الحلول المستخدمة لمعالجة هذه البيانات.",2061.92,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Respond based on 
+your knowledge
+Synthesize 
+research
+2
+
+Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search"
+من هو اللاعب محمد صلاح,"Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=820). Ensure Ollama container is running at http://localhost:11434/api/chat.",820.29,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Individual Words
+cat 
+happy
+Word 
+Embedding 
+Model
+Sentences
+The weather is nice
+What a lovely day
+Sentence 
+Embedding 
+Model
+Documents
+Document 
+Embedding 
+Model
+50
+
+0.95
+0.8
+0.7
+0.6
+A History of NYC
+Sauce Secrets
+Cooking at Home
+Pizza Basics
+Retriever
+How can I make New York style 
+pizza at home?
+Your Question
+“What does the 
+prompt mean?”
+“What documents in 
+the knowledge base 
+are similar?”
+Knowledge 
+Base
+18"
+لماذا خوارزميات اللغة الكبيرة تهلوس وتعطى اجابات خطأ احيانًا؟,"خوارزميات اللغة الكبيرة (Big-Data) قد تعاني من مشاكل مثل التخزين الضخم، القدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة. هذه الخوارزميات تستخدم مصطلحات مثل ""Big Data"" و ""Hadoop"" لوصفها.
+
+1. **تخزين الضخم**: Big-Data يتطلب تخزين ضخم للبيانات، مما يعني أن البيانات تتضمن العديد من الصفوف والبيانات التي لا تحتاج إلى التحليل الفوري. هذا يخلق مشكلة كبيرة في القدرة على التعامل مع هذه البيانات.
+
+2. **سرعة المعالجة**: Big-Data يعتمد بشكل كبير على السرعة في المعالجة، حيث يتم استخدام تقنيات مثل ""MapReduce"" لتحليل البيانات بسرعة عالية. ولكن هذه التقنيات تتطلب أن تكون البيانات متاحة بشكل سريع وسهلة للتعامل معها.
+
+3. **قدرة التعامل مع البيانات الهائلة**: Big-Data يعتمد على القدرة على التعامل مع بيانات هائلة، حيث يتم استخدام تقنيات مثل ""Hadoop"" لتحليل البيانات بسرعة عالية وسهولة في التعامل معها.
+
+من هنا يأتي السؤال عن ""هلوس الخوارزميات الكبيرة"". هذه الخوارزميات تعاني من مشاكل كبيرة مثل التخزين الضخم والقدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة. ومع ذلك، Big-Data هو جزء من الحلول التي تقدمها الشركات لمعالجة البيانات الكبيرة، مما يعني أن الخوارزميات الكبيرة هي جزء من الحلول المستخدمة لمعالجة هذه البيانات.",974.1,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Respond based on 
+your knowledge
+Synthesize 
+research
+2
+
+Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search"
+لا اقصد البيانات الضخمة BIG Data. لكن اقصد خوارزميات اللغة LLMs,"LLMs (Large Language Models) أو Big-Data يمكن أن تواجه العديد من المشاكل مثل التخزين الضخم، القدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة.
+
+1. **تخزين الضخم**: LLMS يتطلب تخزين ضخم للبيانات التي يتم استخدامها في التدريب. هذا يخلق مشكلة كبيرة في القدرة على التعامل مع هذه البيانات.
+
+2. **سرعة المعالجة**: LLMS يعتمد بشكل كبير على السرعة في المعالجة، حيث يتم استخدام تقنيات مثل ""MapReduce"" لتحليل البيانات بسرعة عالية. ولكن هذه التقنيات تتطلب أن تكون البيانات متاحة بشكل سريع وسهلة للتعامل معها.
+
+3. **قدرة التعامل مع البيانات الهائلة**: LLMS يعتمد على القدرة على التعامل مع بيانات هائلة، حيث يتم استخدام تقنيات مثل ""Hadoop"" لتحليل البيانات بسرعة عالية وسهولة في التعامل معها.
+
+من هنا يأتي السؤال عن ""هلوس الخوارزميات الكبيرة"". هذه الخوارزميات تعاني من مشاكل كبيرة مثل التخزين الضخم والقدرة على التعامل مع البيانات الهائلة والسرعة في المعالجة. ومع ذلك، Big-Data هو جزء من الحلول التي تقدمها الشركات لمعالجة البيانات الكبيرة، مما يعني أن الخوارزميات الكبيرة هي جزء من الحلول المستخدمة لمعالجة هذه البيانات.",960.7,"Dataset Size
+Calculation Time
+Linear 
+Growth
+1,000 docs = 1,000 distance 
+calculations per search
+1B docs = 1B distance 
+calculations every time
+Scaling Challenges
+If you want to build 
+high-performing retrievers,
+you’ll need a better approach!
+61
+
+Retriever
+●
+Manages knowledge base of trusted 
+information
+●
+Finds the most relevant Information 
+and shares information with the LLM
+●
+Improves generation
+Retriever
+Knowledge 
+Base
+8
+
+What LLMs don’t know
+LLMS can’t access confidential information
+Hard to access information
+Some information isn’t widely available online, making it inaccessible to LLMs.
+Real time data
+LLMs are trained on past data and don’t update automatically
+
+Traditional Language Model Usage
+Great answer
+Not so great
+OR
+Very recent 
+information
+Specialized 
+knowledge
+Prompt 
+LLM
+Internet 
+Data
+Italian Dishes
+Movies
+US History
+3"
+ما هى قاعدة بيانات المتجهات؟,"قاعدة البيانات المتجهات (Graph Database) هي نوع من أنواع بيئة المخزن التي تستخدم مفاهيم الجذور والارتباطات (العلاقات) لتخزين وبحث البيانات. هذه القاعدة البيانات تسمح بالتعامل مع البيانات التي تتكون من الأشخاص، الأماكن، العلاقات بينهم، أو أي شيء آخر يرتبط ببعضه.
+
+مثال على استخدام قاعدة البيانات المتجهات هو في التعامل مع البيانات المتعلقة بالشبكات الاجتماعية. إذا كان هناك شخص واحد الذي يمتلك علاقات (متشابكة) مع العديد من الأشخاص الآخرين، يمكننا استخدام قاعدة البيانات المتجهات لتخزين هذه العلاقات وبحثها بسهولة.
+
+بشكل عام، القاعدة البيانات المتجهة تستخدم في العديد من التطبيقات مثل: 
+
+1. التعامل مع البيانات الاجتماعية (مثل معلومات التواصل الاجتماعي)
+2. التحليل البيئي (الذي يتعامل مع البيانات المتعلقة بالمناخ والبيئة)
+3. البحث العلمي (الذي يتعامل مع البيانات التي تتضمن العلاقات بين الأشخاص أو الأشياء)
+4. تطوير الاتجاهات في الأعمال التجارية (مثل تحديد العلامات التجارية وتحليل التغيرات في السوق)
+
+بشكل عام، القاعدة البيانات المتجهة هي مفهوم مهم في مجال البيانات الكبيرة والذكاء الصناعي حيث تستخدم لمعالجة البيانات التي تتكون من العلاقات والتفاعلات بين الأشياء.",981.25,"Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+help you respond. <retrieved articles>”
+Retriever
+Knowledge 
+Base
+14
+
+Search Techniques
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+1. Document A
+2. Document B
+3. Document C
+4. Document D
+…
+1. Document C
+2. Document B
+3. Document X
+4. Document Y
+…
+Keyword 
+Search
+Semantic 
+Search
+
+Respond based on 
+your knowledge
+Synthesize 
+research
+2"
