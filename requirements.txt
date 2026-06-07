@@ -1,0 +1,8 @@
+gradio
+ollama
+qdrant-client
+langchain-community
+langchain-core
+langchain-ollama
+langchain-qdrant 
+pymupdf

@@ -1,0 +1,110 @@
+[
+    {
+        "turn_number": 1,
+        "question": "اشرح الـ RAG",
+        "answer": "RAG هي تقنية تعتمد على اشتراك بين نموذج التحليل المُعالَم (LLM) والبيانات. يتم جمع البيانات من مصادر مختلفة وتتم معالجة هذه البيانات بواسطة LLM. ثم يقوم بتحليل البيانات وجمع النتائج ويقدم نسخة من المعلومات لـ LLM. هذه العملية تعتمد على تقنية \"استرجاع التوجيه\", حيث يقوم الجهاز بتوجيه النموذج المُعالَم إلى البيانات التي يمكن أن تساعد في الوصول إلى النتيجة الصحيحة.\n\nفيما يتعلق بالعمليات، يتم جمع البيانات من مصادر مختلفة مثل الكتب والمواقع والمنصات التعليمية وغيرها. ثم يتم استخدام نموذج التحليل المُعالَم لمعالجة هذه البيانات وفهمها. بعد ذلك، يقوم الجهاز بتفسير البيانات وتجميع النتائج ويقدم نسخة من المعلومات لـ LLM. هذا النظام يعتمد أيضًا على تقنية \"استرجاع التوجيه\"، حيث يقوم الجهاز بتوجيه LLM إلى البيانات التي يمكن أن تساعد في الوصول إلى النتيجة الصحيحة.\n\nمن خلال هذا، يتم تحويل البيانات المستخدمة إلى نتائج مفيدة وقابلة للتطبيق.",
+        "metrics": {
+            "execution_time_seconds": 291.86,
+            "user_question_word_count": 3,
+            "ai_answer_word_count": 135,
+            "avg_words_per_second": 0.46,
+            "retrieved_context": "How RAG solves the problem\nRetriever\nKnowledge \nBase\nLLM\n+\nrelevant context \n“grounds” the LLM’s \nresponses\n16\n\n10\nRAG Architecture Overview\n\nRetrieval \nAugmented \nGeneration \n(RAG)\nDr. Tamer Arafa\n\nLecture References\n• Retrieval Augmented Generation (RAG) – Deeplearning.ai Course \n(Modules 1-4) \n89"
+        }
+    },
+    {
+        "turn_number": 2,
+        "question": "explain what RAG is",
+        "answer": "RAG, or Retrieval-Augmented Generation (استرجاع التوجيه), is a technique that combines two powerful tools: the LLM and the retriever. This system uses a combination of pre-processed data from different sources to train the model, which then generates responses to given prompts.\n\nIn this system:\n\n- The retreiver identifies relevant information stored in a knowledge base.\n- The LLM generates responses based on this context provided by the retreive.\n\nKey advantages include:\n1. Using proven and verified sources for answers\n2. Focusing primarily on generating text, reducing complexity and improving speed\n\nThe RAG system provides insights into how it works:\n\n1. Includes sources for verifiable answers: This means that when prompted with a specific question, LLM looks at the source documents to ensure they have trustworthy information.\n2. Focuses model on generation: The system prioritizes the model's ability to generate text rather than any other tasks like reasoning or understanding context.\n\nThe RAG approach relies heavily on contextual and relevant data, making it highly effective for generating accurate responses quickly from large datasets.",
+        "metrics": {
+            "execution_time_seconds": 322.09,
+            "user_question_word_count": 4,
+            "ai_answer_word_count": 172,
+            "avg_words_per_second": 0.53,
+            "retrieved_context": "10\nRAG Architecture Overview\n\nHow RAG solves the problem\nRetriever\nKnowledge \nBase\nLLM\n+\nrelevant context \n“grounds” the LLM’s \nresponses\n16\n\nRAG\nSystem\nRetriever\nKnowledge \nBase\nRelevant \nDocuments\nNormal \nLLM Use\nPrompt\nResponse\nLLM\n11\n\nIncludes sources for verifiable answers\nFocuses model on generation\nRetriever finds facts, LLM writes responses\nAdvantages of RAG\n“Why are hotels in Vancouver so expensive this coming \nweekend? Here are the five relevant articles that may \nhelp you respond. <retrieved articles>”\nRetriever"
+        }
+    },
+    {
+        "turn_number": 3,
+        "question": "لماذا LLMs تهلوس، تعطي إجابات غير صحيحة",
+        "answer": "LLMs (large language models) generate \"probable\" text, not necessarily truthful ones. This means that while their outputs are likely to be accurate based on the statistical patterns they've learned from training data, those responses may contain inaccuracies or even contradictions when compared with real-world facts.\n\nHere's why:\n\n1. **LLMs Generate Probable Word Sequences**: LLMs generate text sequences based on statistical probabilities derived from their training dataset. This means they can produce coherent-looking but incorrect sentences because it is a probability-based approach.\n   \n2. **Knowledge Gaps Cause Inaccurate Responses**: If the model's knowledge base or understanding of some concepts is incomplete, it may respond with accurate facts but in an inaccurate context.\n\n3. **Responses Can Sound Right But Aren't True**: Even though certain responses look plausible or correct based on what LLMs have learned, they might not be factually true due to the lack of comprehensive data input and knowledge base.\n\nLLMs can generate responses that \"sound right\" (meaning coherent) but are incorrect in their assertions. This phenomenon is commonly observed in various applications such as customer support where a response may look reasonable but actually contains factual errors or does not align with current practices and regulations.",
+        "metrics": {
+            "execution_time_seconds": 636.21,
+            "user_question_word_count": 7,
+            "ai_answer_word_count": 196,
+            "avg_words_per_second": 0.31,
+            "retrieved_context": "•\nTruthful ≠ probable\nLLMs are designed to generate \"probable\" text, not truthful text\n15\n\nWhy LLMs Hallucinate\n•\nLLMs generate probable word sequences\nLLMs just reproduce statistical patterns from their training data\n•\nKnowledge gaps cause inaccurate responses\nResponses can “sound right” but aren't true.\n•\nTruthful ≠ probable\n\nRetriever\n●\nManages knowledge base of trusted \ninformation\n●\nFinds the most relevant Information \nand shares information with the LLM\n●\nImproves generation\nRetriever\nKnowledge \nBase\n8\n\nWhat LLMs don’t know\nLLMS can’t access confidential information\nHard to access information\nSome information isn’t widely available online, making it inaccessible to LLMs.\nReal time data\nLLMs are trained on past data and don’t update automatically"
+        }
+    },
+    {
+        "turn_number": 4,
+        "question": "ممكن تترجم الشرح السابق إلى اللغة العربية",
+        "answer": "لماذا يميل LLMs للعثور على الإجابات غير الصحيحة، ويخطئ في إجاباته؟\n\nLLMs (الأنماط الكبيرة من التعلم) يستخدمون \" improbable\" محتوى للحصول على الإجابات. هذا يعني أنهم ينتجون سلسلة من الكلمات التي تبدو أصلية ولكنها قد تكون خاطئة إذا كان لديهم بيانات كمية كبيرة، مثل التفاصيل والفهم الصحيح.\n\nالسبب:\n\n1. **LLMs يستخدمون تصميمات متوقعه**: LLMs ينتجون محتوى قواميس يعتمد على نماذج التعلم من بيانات معروفة. هذا يعني أنهم يمكن أن ينتجوا سلسلة الكلمات التي تبدو جوابية ولكنها قد تكون خاطئة إذا كانت لديهم بيانات كمية كبيرة.\n\n2. **العثور على بيانات بعينها تؤدي إلى الإجابات الخاطئة**: لو أن معرفتهم بالبيانات أو فهمهم لمجموعة من الأفكار كان صعباً، سيكون LLM قادر على إنتاج الأجوبة التي تكون خاطئة ولكن تم تصميمها بمعيار.\n\n3. **إجابة مكذوبة ولكن تبدو مفهومة**: حتى إذا كانت الإجابات看起来像是 فactual، فإنها قد لا تكون صحيحة لأن البيانات التي استخدمتها LLM ليست شاملة أو ليس لديهم معلومات كافية من الناحية الحقيقية.\n\nLLMs يمكن أن ينتجوا الإجابة التي \"تقريبية\" (معقدة) ولكنها قد تكون خاطئة عندما وصفت بالاستناد إلى ما يظهر.",
+        "metrics": {
+            "execution_time_seconds": 955.08,
+            "user_question_word_count": 7,
+            "ai_answer_word_count": 167,
+            "avg_words_per_second": 0.17,
+            "retrieved_context": "Retrieval \nAugmented \nGeneration \n(RAG)\nDr. Tamer Arafa\n\nhelp you respond. <retrieved articles>”\nRetriever\nKnowledge \nBase\n14\n\nRespond based on \nyour knowledge\nSynthesize \nresearch\n2\n\nSearch Techniques\n1. Document A\n2. Document B\n3. Document C\n4. Document D\n…\n1. Document C\n2. Document B\n3. Document X\n4. Document Y\n…\n1. Document A\n2. Document B\n3. Document C\n4. Document D\n…\n1. Document C\n2. Document B\n3. Document X\n4. Document Y\n…\nKeyword \nSearch\nSemantic \nSearch"
+        }
+    },
+    {
+        "turn_number": 5,
+        "question": "ما هو العنوان الرئيسي فى صفحة ١",
+        "answer": "The title of the page is \"Retrieval Augmented Generation\".",
+        "metrics": {
+            "execution_time_seconds": 619.26,
+            "user_question_word_count": 7,
+            "ai_answer_word_count": 9,
+            "avg_words_per_second": 0.01,
+            "retrieved_context": "Retrieval \nAugmented \nGeneration \n(RAG)\nDr. Tamer Arafa\n\nhelp you respond. <retrieved articles>”\nRetriever\nKnowledge \nBase\n14\n\nIndividual Words\ncat \nhappy\nWord \nEmbedding \nModel\nSentences\nThe weather is nice\nWhat a lovely day\nSentence \nEmbedding \nModel\nDocuments\nDocument \nEmbedding \nModel\n50\n\nSearch Techniques\n1. Document A\n2. Document B\n3. Document C\n4. Document D\n…\n1. Document C\n2. Document B\n3. Document X\n4. Document Y\n…\n1. Document A\n2. Document B\n3. Document C\n4. Document D\n…\n1. Document C\n2. Document B\n3. Document X\n4. Document Y\n…\nKeyword \nSearch\nSemantic \nSearch"
+        }
+    },
+    {
+        "turn_number": 6,
+        "question": "explain Retriever tradeoffs",
+        "answer": "Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=720). Ensure Ollama container is running at http://localhost:11434/api/chat.",
+        "metrics": {
+            "execution_time_seconds": 720.54,
+            "user_question_word_count": 3,
+            "ai_answer_word_count": 17,
+            "avg_words_per_second": 0.02,
+            "retrieved_context": "Retriever Tradeoffs\n●\nRelevance vs irrelevance\nNeed to return relevant documents and withhold irrelevant ones\n●\nReturn every document?\nMountains of irrelevant docs. Wastes context window\n●\nReturn the single highest ranked document?\nMiss valuable information\n●\nNo perfect solution\n\nIncludes sources for verifiable answers\nFocuses model on generation\nRetriever finds facts, LLM writes responses\nAdvantages of RAG\n“Why are hotels in Vancouver so expensive this coming \nweekend? Here are the five relevant articles that may \nhelp you respond. <retrieved articles>”\nRetriever\n\nRetriever\n●\nManages knowledge base of trusted \ninformation\n●\nFinds the most relevant Information \nand shares information with the LLM\n●\nImproves generation\nRetriever\nKnowledge \nBase\n8\n\nMiss valuable information\n●\nNo perfect solution\nRetriever usually doesn’t perfectly rank documents\n●\nMonitor and experiment\nChange settings to find what works\n19"
+        }
+    },
+    {
+        "turn_number": 7,
+        "question": "explain Retriever tradeoffs",
+        "answer": "Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=720). Ensure Ollama container is running at http://localhost:11434/api/chat.",
+        "metrics": {
+            "execution_time_seconds": 720.22,
+            "user_question_word_count": 3,
+            "ai_answer_word_count": 17,
+            "avg_words_per_second": 0.02,
+            "retrieved_context": "Retriever Tradeoffs\n●\nRelevance vs irrelevance\nNeed to return relevant documents and withhold irrelevant ones\n●\nReturn every document?\nMountains of irrelevant docs. Wastes context window\n●\nReturn the single highest ranked document?\nMiss valuable information\n●\nNo perfect solution\n\nIncludes sources for verifiable answers\nFocuses model on generation\nRetriever finds facts, LLM writes responses\nAdvantages of RAG\n“Why are hotels in Vancouver so expensive this coming \nweekend? Here are the five relevant articles that may \nhelp you respond. <retrieved articles>”\nRetriever\n\nRetriever\n●\nManages knowledge base of trusted \ninformation\n●\nFinds the most relevant Information \nand shares information with the LLM\n●\nImproves generation\nRetriever\nKnowledge \nBase\n8\n\nMiss valuable information\n●\nNo perfect solution\nRetriever usually doesn’t perfectly rank documents\n●\nMonitor and experiment\nChange settings to find what works\n19"
+        }
+    },
+    {
+        "turn_number": 8,
+        "question": "hello ",
+        "answer": "Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=720). Ensure Ollama container is running at http://localhost:11434/api/chat.",
+        "metrics": {
+            "execution_time_seconds": 720.07,
+            "user_question_word_count": 1,
+            "ai_answer_word_count": 17,
+            "avg_words_per_second": 0.02,
+            "retrieved_context": "help you respond. <retrieved articles>”\nRetriever\nKnowledge \nBase\n14\n\nSemantic search introduction\n44\n\n0.95\n0.8\n0.7\n0.6\nA History of NYC\nSauce Secrets\nCooking at Home\nPizza Basics\nRetriever\nHow can I make New York style \npizza at home?\nYour Question\n“What does the \nprompt mean?”\n“What documents in \nthe knowledge base \nare similar?”\nKnowledge \nBase\n18\n\nPrompts\nUnstructured \nConversational\nRetriever\nNeeds to rapidly find \nrelevant documents \ndespite this mess!\nDocuments\nWide range of formats \nDesigned for humans to read\n21"
+        }
+    },
+    {
+        "turn_number": 9,
+        "question": "hello",
+        "answer": "Network Connection Error: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=720). Ensure Ollama container is running at http://localhost:11434/api/chat.",
+        "metrics": {
+            "execution_time_seconds": 720.05,
+            "user_question_word_count": 1,
+            "ai_answer_word_count": 17,
+            "avg_words_per_second": 0.02,
+            "retrieved_context": "help you respond. <retrieved articles>”\nRetriever\nKnowledge \nBase\n14\n\n0.95\n0.8\n0.7\n0.6\nA History of NYC\nSauce Secrets\nCooking at Home\nPizza Basics\nRetriever\nHow can I make New York style \npizza at home?\nYour Question\n“What does the \nprompt mean?”\n“What documents in \nthe knowledge base \nare similar?”\nKnowledge \nBase\n18\n\nSemantic search introduction\n44\n\nIndividual Words\ncat \nhappy\nWord \nEmbedding \nModel\nSentences\nThe weather is nice\nWhat a lovely day\nSentence \nEmbedding \nModel\nDocuments\nDocument \nEmbedding \nModel\n50"
+        }
+    }
+]
