@@ -40,6 +40,8 @@ To run a cost-effective user study, a custom evaluation infrastructure was built
 * **Multi-Criteria Scoring:** Human raters grade output pairs on a strict 0–3 scale across 5 dimensions: *Relevance, Faithfulness, Latency, Readability,* and *Perplexity*.
 * **Automated Data Pipeline:** The Apps Script backend dynamically processes inputs, separates individual evaluator submissions, and saves structured log files directly into secured, isolated **Google Drive** folders for downstream statistical analysis (e.g., Inter-Annotator Agreement via Cohen's Kappa).
 
+# Evaluation Web App
+
 <p align="center">
   <img src="Evaluation_APP.png" alt="Evaluation App" width="100%">
 </p>
