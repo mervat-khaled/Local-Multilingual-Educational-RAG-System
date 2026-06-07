@@ -5,24 +5,9 @@ A lightweight, localized, and secure Retrieval-Augmented Generation (RAG) agent 
 
 # System Workflow Diagram
 
-[ User (Query: EN or AR) ] ──> [ Gradio Interface ] ──> [ LangChain Orchestrator ]
-                                                               │
-     ┌─────────────────────────────────────────────────────────┤
-     ▼ (Retrieval Phase)                                       ▼ (Generation Phase)
-[ In-Memory Qdrant DB ]                                 [ Dockerized Ollama Engine ]
-     │                                                         │ (Runs on 4-Core CPU)
-     └─> [ Extracted EN Chunks ] ──> [ Prompt Engineering ] ──>│ (Model: qwen2.5:1.5b)
-                                                               │
-                                                               ▼ (Multilingual Output)
-                                                        [ Response: EN or AR ]
-                                                               │
-     ┌─────────────────────────────────────────────────────────┴─────────────────────┐
-     ▼ (Automatic Evaluation)                                                        ▼ (Human Evaluation Pipeline)
-[ Faithfulness Score (Ragas/Judge) ]                                         [ Google Apps Script Custom App ]
-                                                                                     │
-                                                                                     ▼
-                                                                             [ Individual Rater ]
-                                                                             [  Logs to G-Drive ]
+<p align="center">
+  <img src="workflow.png" alt="System Architecture Workflow" width="100%">
+</p>
 
 ## Architecture & Technical Pipeline
 
