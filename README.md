@@ -50,7 +50,7 @@ To run a cost-effective user study, a custom evaluation infrastructure was built
 # Evaluation Web App
 
 <p align="center">
-  <img src="Evaluation_APP.png" alt="Evaluation App" width="100%">
+  <img src="Eval_app.png" alt="Evaluation App" width="100%">
 </p>
 
 
