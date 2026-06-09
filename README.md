@@ -59,12 +59,12 @@ Since the rating scale is ordinal (0–3), where the distance between categories
 Below is the detailed breakdown of the agreement scores for each individual criterion alongside the overall global evaluation:
 
 Criterion       | Weighted Kappa (Linear)
--------------------------------------------------
-Relevance        |                 0.3232
-Faithfulness     |                 0.4104
-Latency          |                 0.1492
-Readability      |                 0.6803
-Preplexity       |                 0.4476
+-------------------------------------------
+Relevance        |                 0.3232  |
+Faithfulness     |                 0.4104  |
+Latency          |                 0.1492  |
+Readability      |                 0.6803  | 
+Preplexity       |                 0.4476  |
 
 Overall Cohen's Kappa Score: 0.4752
 Interpretation: Moderate Agreement.
