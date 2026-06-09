@@ -3,7 +3,9 @@
 
 A lightweight, localized, and secure Retrieval-Augmented Generation (RAG) agent designed to act as an interactive teaching assistant. The system ingests English presentation slides (PDF/PPT format) and supports cross-lingual interaction, allowing students to query and receive responses in both English and Arabic. The architecture is engineered to run entirely on a 4-core consumer CPU.
 
-![Gradio_interfaceA.png](Gradio_interfaceA.png)  ![Gradio_interfaceE.png](Gradio_interfaceE.png) 
+<p align="center">
+  <img src="Arabic_chat.png" alt="Gradio Interface" width="100%">
+</p>
 
 # System Workflow Diagram
 
