@@ -15,7 +15,8 @@ A lightweight, localized, and secure Retrieval-Augmented Generation (RAG) agent 
 
 ### 1. Ingestion & Ephemeral Vector Storage
 * **Advanced Document Parsing:** Utilized `fitz` (**PyMuPDF**) combined with **LangChain** to handle non-linear slide layouts. This approach extracts text locked inside floating text boxes, shapes, and complex diagrams that standard parsers misalign.
-* **Hardware-Aware Chunking Strategy:** Implemented a tight **Chunk Size of 300 characters** with an **Overlap of 50 characters**. This compact context boundary ensures high token density and prevents memory thrashing during local CPU matrix calculations.
+* **Semantic Slide-Level Page Chunking:** Replaced arbitrary character-based chunking with a rigid Page-as-a-Chunk strategy. By bypassing traditional recursive text splitters, each individual PowerPoint slide is treated as a single, atomic logical unit. This preserves the structural hierarchy (titles, bullet points, and definitions) and prevents contextual fragmentation across slide boundaries.
+* **Explicit Slide Anchoring:** Integrated metadata directly into the vector payload by prepending [Slide X] identifiers directly into the chunk text body. This layout explicitly forces the local Small Language Model (SLM) to maintain structural grounding and easily cite exact page sources.
 * **Lightweight Embeddings:** Generated vectors using the `granite-embedding` model via **Ollama**, ensuring high semantic mapping accuracy for educational content.
 * **Session-Isolated Storage:** Configured an in-memory **Qdrant** database instance. Vector structures are instantiated dynamically per user session, providing strict privacy boundaries and zero persistent disk I/O overhead.
 
@@ -31,8 +32,11 @@ To ensure maximum safety and pedagogical reliability without relying on cloud-ba
 
 ### A. Automated Metric: Faithfulness (Groundedness)
 Because this application operates without human-curated ground truth target answers, the system automates quality control using **Faithfulness** as its core standalone metric.
-* **Mechanism:** An automated LLM-as-a-Judge inspects the **Generated Response** against the **Retrieved Context Chunks**.
+* **Mechanism:** An automated LLM-as-a-Judge inspects the **Generated Response** against the **the Retrieved Slide Contexts.**.
 * **Objective:** It verifies that every mathematical statement, definition, or factual claim in the final response is strictly derived from the English source PDF, mathematically penalizing any cross-lingual translation hallucinations or model fabrications.
+
+
+
 
 ### B. Human-in-the-Loop Infrastructure (Google Apps Script Engine)
 To run a cost-effective user study, a custom evaluation infrastructure was built on top of the Google Workspace ecosystem:
