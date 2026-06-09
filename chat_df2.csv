@@ -1,0 +1,863 @@
+question,answer,execution_time_seconds,retrieved_context
+"اشرح ما هو الفرق بين dense vector , sparse vector","في البحث عن الكلمات، يتم استخدام مصطلح ""الvector"" أو ""المصفوفة"". في هذا السياق، يُستخدم المصطلح بطرق مختلفة. 
+
+- **Sparse Vector**: يشير إلى أن معظم الكلمات لا تظهر بشكل كبير في النص (أي أنها غير مرتبطة بالكلمات الرئيسية). في حالة ""البندز"" أو ""البند""، فإن هذه الكلمات تكون محدودة وليست عادةً مرتبطة ببعضها البعض. 
+
+- **Dense Vector**: يشير إلى أن معظم الكلمات تظهر بشكل كبير في النص (أي أنها مرتبطة بالكلمات الرئيسية). في حالة ""البندز"" أو ""البند""، فإن هذه الكلمات تكون مرتبطة بكثير من الكلمات الرئيسية.
+
+في الواقع، لا يوجد فرق كبير بينهما في عملية البحث عن الكلمات. الفرق يعتمد على كيفية استخدام البيانات وطبيعة النص الذي يتم البحث عنه.",336.29,"[Slide 31]
+Sparse Vectors
+Most words aren’t used. The bag of words is sparse, with few non-zero entries.
+“Making pizza without a pizza oven”
+making 
+1
+pizza 
+1
+without 
+1
+a 
+1
+cake 
+0
+drink 
+0
+pan 
+0
+pasta 
+0
+oven 
+1
+pan 
+0
+pasta 
+0
+with 
+0
+tea 
+0
+burger 
+0
+salad 
+0
+taco 
+0
+blend 
+0
+the 
+0
+31
+
+[Slide 77]
+Typical Vector Database Operations
+●
+Database setup
+●
+Load documents
+●
+Create sparse vectors for keyword search
+●
+Create dense vectors for semantic search
+●
+Create HNSW index to power ANN algorithm
+●
+Run searches!
+77
+
+[Slide 71]
+Search Algorithm
+No closer 
+neighbors
+Query 
+Vector
+71
+
+[Slide 66]
+Search Algorithm
+Query 
+Vector
+66"
+give me an overview about RAG architecture,"RAG (Retrieval-Augmented Generation) is a type of neural machine translation that combines the strengths of retrieval and generation to improve language understanding and generation tasks. It works by first retrieving relevant context from a knowledge base, then using this context to generate more accurate translations or responses.
+
+The architecture typically consists of three main components:
+
+1. **Retriever**: This component is responsible for finding relevant context in the knowledge base that can help generate better output.
+2. **Knowledge Base**: This contains the background information and context needed to understand the input text.
+3. **Language Model (LLM)**: This component generates the final output based on the retrieved context.
+
+The LLM receives inputs from both the retriever and the knowledge base, combining them to produce more accurate translations or responses. This approach leverages the strengths of retrieval in providing relevant context and the power of language models in generating high-quality outputs.",399.09,"[Slide 10]
+10
+RAG Architecture Overview
+
+[Slide 16]
+How RAG solves the problem
+Retriever
+Knowledge 
+Base
+LLM
++
+relevant context 
+“grounds” the LLM’s 
+responses
+16
+
+[Slide 28]
+Introduction to Keyword Search
+Decades of proven simplicity
+The simplicity and effectiveness that has powered retrieval for decades 
+makes keyword search a key component of modern RAG systems.
+Keyword Search
+28
+
+[Slide 89]
+Lecture References
+• Retrieval Augmented Generation (RAG) – Deeplearning.ai Course 
+(Modules 1-4) 
+89"
+"perfect.. could you please explain slide 86, 87, and 88..","Sure! Slide 86 is about ""Complete Workflow"". It outlines a complete process for using RAG to generate translations or responses.
+
+Slide 87 focuses on the **""Configure Database""** step. This involves setting up the knowledge base that will be used by the system. The database should contain relevant information and context that can help in generating accurate outputs.
+
+Slide 88 is about the **""Load and Index Data""** step, which means loading the data into a format that can be easily searched and indexed for retrieval purposes. This indexing helps speed up the process of finding relevant context when needed.
+
+These slides provide an overview of how RAG works in practice, from setting up the knowledge base to using it effectively in generating translations or responses.",356.33,"[Slide 89]
+Lecture References
+• Retrieval Augmented Generation (RAG) – Deeplearning.ai Course 
+(Modules 1-4) 
+89
+
+[Slide 1]
+Retrieval 
+Augmented 
+Generation 
+(RAG)
+Dr. Tamer Arafa
+
+[Slide 85]
+Using your own prompts
+85
+
+[Slide 84]
+Complete Workflow
+Configure 
+Database
+Load and 
+Index Data
+Perform 
+Searches
+84"
+"اشرح vector database, , واديني مثال عليها","الvector database هي نوع من أنواع المخزنات التي تستخدم في تخزين البيانات بشكل متجدد، حيث يتم تخزين البيانات بوصفها مصفوفات أو مجموعات من العناصر (فيما يُعرف بالعناصر) والتي يمكن الوصول إليها بسهولة وسرعة. هذه المجموعات أو العناصر هي عبارة عن مجموعة من الأرقام التي تُستخدم لوصف البيانات بشكل دقيق.
+
+مثال على استخدام vector database هو في مجال التعلم الآلي، حيث يتم تخزين البيانات كمصفوفات أو مجموعات من العناصر، والتي يمكن استخدامها لتحسين النتائج في العمليات التنبؤية والتعلم الآلي. 
+
+على سبيل المثال، إذا كان هناك بيانات حول الأشخاص الذين يقرأون الكتب، يمكن استخدام هذه البيانات لتوقع ما الذي سيقرأه الشخص القادم. هذا يتم عن طريق تخزين هذه البيانات كمصفوفات أو مجموعات من العناصر (مثل اسم الكتاب، عدد الصفحات، نوع الكتاب، etc.) و然后使用这些信息来生成预测。",575.24,"[Slide 76]
+Vector 
+Database
+Vector Database
+Designed for Vector Search
+Designed to store high-dimensional vectors and perform vector
+search using ANN algorithms
+Outperform Relational Databases
+Relational databases perform vector search similarly to an
+inefficient KNN search
+Optimized for ANN Search
+Designed to build HNSW indexes and compute vector distances.
+They scale well and operate quickly
+Weaviate
+Popular open-source vector database you’ll use in this course
+76
+
+[Slide 75]
+Vector databases
+75
+
+[Slide 77]
+Typical Vector Database Operations
+●
+Database setup
+●
+Load documents
+●
+Create sparse vectors for keyword search
+●
+Create dense vectors for semantic search
+●
+Create HNSW index to power ANN algorithm
+●
+Run searches!
+77
+
+[Slide 59]
+Basic Vector Retrieval -  KNN
+KNN: K Nearest Neighbors
+●
+Vectorize all documents and 
+prompt
+●
+Compute distances to all 
+document vectors
+●
+Sort by distance
+Prompt vector
+59"
+What is HNSW?,"HNSW stands for Hierarchical Navigable Small World. It's a data structure used in computer science and artificial intelligence to efficiently store, retrieve, and navigate through large datasets. The goal of HNSW is to provide fast access times while maintaining low memory usage.
+
+In simpler terms, imagine you have a very big library with millions of books. You want to be able to quickly find any book without having to go through every single one. HNSW helps achieve this by organizing the books in a way that allows for efficient searching and navigation. It's like creating a map where you can easily find your way from any point on the map.
+
+HNSW is particularly useful when dealing with large datasets, such as those used in recommendation systems or image search engines, where fast access to relevant information is crucial.",601.98,"[Slide 72]
+Hierarchical Improvement
+●
+Hierarchical Navigable Small World (HNSW) 
+enhances Navigable Small World by speeding up 
+early parts of the search
+●
+Relies on a hierarchical proximity graph
+72
+
+[Slide 77]
+Typical Vector Database Operations
+●
+Database setup
+●
+Load documents
+●
+Create sparse vectors for keyword search
+●
+Create dense vectors for semantic search
+●
+Create HNSW index to power ANN algorithm
+●
+Run searches!
+77
+
+[Slide 58]
+Approximate nearest neighbors 
+algorithms (ANN)
+58
+
+[Slide 12]
+RAG
+System
+Knowledge 
+Base
+Normal 
+LLM Use
+Augmented Prompt
+Prompt
+“Why are hotels in Vancouver so expensive this coming 
+weekend? Here are the five relevant articles that may 
+help you respond. <retrieved articles>”
+Retriever
+Relevant 
+Documents
+12"
+explain Beta Weight,"The beta weight (β) is a parameter used in information retrieval and text mining techniques to balance the importance of keyword matching versus semantic similarity when searching for documents. It helps determine how much emphasis should be given to exact matches versus partial or contextual matches.
+
+In general, β = 0.8 means that keywords are weighted more heavily than semantics, while β = 0.5 suggests a balanced approach where both keyword and semantic information contribute equally. When β is set higher (e.g., 0.9), it prioritizes the importance of exact matches over semantic similarity.
+
+For example, if you're searching for ""dog"" in a document that mentions ""canine,"" but not necessarily by name, β = 0.8 would give more weight to finding documents containing ""canine"" than just matching ""dog."" This can be useful when you want to ensure that the search results are highly specific and accurate.
+
+On the other hand, if β is set lower (e.g., 0.5), it means both keyword and semantic information have equal importance in determining relevance. This approach might yield more diverse but potentially less precise results.
+
+In practice, β can be adjusted based on the specific needs of a given application or dataset to optimize for different retrieval goals.",595.85,"[Slide 57]
+β = 0.8
+Semantic Search
+80%
+Keyword Search
+20%
+Beta: Weighting Semantic vs. Keyword
+β = 0.7
+Semantic Search
+70%
+Keyword Search
+30%
+If exact keyword matching is important, set a lower beta
+57
+
+[Slide 35]
+Basic TF scoring treats all words equally, whether 
+they're common filler words or rare, meaningful terms.
+Solution: Weight terms using “inverse document frequency” (IDF).
+Score = TF(word, doc) × log(Total docs /  Docs containing word)
+TF-IDF
+35
+
+[Slide 39]
+Pizza
+The
+Flip to reward rare words
+High Score
+2
+IDF = 1/0.05
+20
+Low Score
+DF = 1/1.0
+1.0
+Pizza
+Too common, no weight
+log( 1 )
+The
+Still higher
+log( 1/20 )
+1.30
+0
+Apply log
+3
+Count Documents
+Appears in 5 out of 100 documents
+1
+0.05
+Pizza
+Appears in all 100 documents
+1.0
+The
+DF = 5/100
+DF = 100/100
+39
+
+[Slide 55]
+Measuring Vector Distance
+Dot product
+Cosine Similarity
+θ
+Higher values, closer vectors
+0
+-1
+Opposite 
+direction
+Perpendicular
+1
+Same 
+direction
+0
+Negative
+Opposite 
+direction
+Perpendicular
+Positive
+Same 
+direction
+55"
+ما هو العنوان الرئيسي فى slide رقم ١,"العنوان الرئيسي في Slide رقم 1 هو ""Using the LLM in applications"".",520.54,"[Slide 43]
+Program-aided Language 
+Models
+43
+
+[Slide 16]
+Using the LLM in 
+applications
+16
+
+[Slide 52]
+LLM
+PAL architecture
+User 
+Application
+Python 
+interpreter
+Orchestration library
+52
+
+[Slide 75]
+Lecture References
+• Generative AI with Large Language Models – Deeplearning.ai Course 
+(Week 3)"
+ازاي استخدم LLMs فى تطبيقات عَملية,"استخدام LLMs في التطبيقات يعني استخدام هذه الأنظمة الحيوية للتعلم الآلي لتقديم خدمات وتطبيقات متنوعة. لذا، يمكننا استخدامها في العديد من المجالات مثل:
+
+1. التصنيف: لتحليل البيانات وتقديم تصنيفات دقيقة.
+2. البحث والتنقل: لمساعدة المستخدمين في العثور على المعلومات أو الأشياء التي يبحثون عنها.
+3. التحليل السمعي: لتحسين تجربة الاستماع للأشخاص الذين يستخدمون الأجهزة اللوحية.
+4. التعلم الآلي: لتقديم خدمات التعلم والتعليم عبر الإنترنت.
+
+LLMs يمكن أن تكون مفيدة في العديد من التطبيقات، حيث تساعد في تقديم نتائج دقيقة وفعالة، مما يحسن تجربة المستخدم ويقلل من الحاجة إلى العمليات البشرية.",518.59,"[Slide 1]
+Optimize LLMs 
+and build 
+generative AI 
+applications
+Dr. Tamer Arafa
+
+[Slide 44]
+LLMs can struggle with mathematics
+What is 40366 / 439?
+LLM
+Prompt
+Model
+Completion
+What is 40366 / 439?
+92.549
+44
+
+[Slide 7]
+LLM optimization techniques
+Quantization
+Pruning
+Distillation
+LLM
+Teacher
+LLM
+Student
+LLM
+16-bit 
+quantized 
+LLM
+LLM
+Pruned 
+LLM
+7
+
+[Slide 6]
+LLM optimization techniques
+Quantization
+Pruning
+Distillation
+LLM
+Teacher
+LLM
+Student
+LLM
+16-bit 
+quantized 
+LLM
+LLM
+Pruned 
+LLM
+6"
+what about model optimization,"Model optimizations are techniques used to improve the performance of machine learning models, particularly in applications where speed and efficiency are crucial. These optimizations can include reducing computational complexity, improving accuracy through fine-tuning parameters, or enhancing data processing capabilities.
+
+In the context provided, there is a slide discussing ""Optimize LLMs"" which implies focusing on how large language models (LLMs) can be optimized to enhance their performance. This could involve techniques such as distillation, where smaller student models are trained from larger teacher models to improve efficiency and reduce computational costs. Other optimizations might include hyperparameter tuning, pruning unnecessary parameters, or leveraging parallel computing for faster processing.
+
+The goal of model optimization is typically to achieve better results with less resources, making the application more efficient and cost-effective while maintaining or improving accuracy.",531.75,"[Slide 5]
+Model optimizations to 
+improve application performance
+5
+
+[Slide 1]
+Optimize LLMs 
+and build 
+generative AI 
+applications
+Dr. Tamer Arafa
+
+[Slide 11]
+Train a smaller student model from a larger teacher model
+Distillation
+LLM
+Teacher
+LLM
+Student
+softmax
+hard predictions
+hard labels 
+(ground truth)
+`1
+soft labels 
+soft predictions
+Distillation
+Loss
+softmax 
+softmax
+Knowledge 
+Distillation
+❄
+Student 
+Loss
+Temperature 
+T=1
+Training 
+Data
+11
+
+[Slide 14]
+Pruning
+○
+Full model re-training
+○
+PEFT/LoRA
+○
+Post-training
+Remove model weights with values close or equal to zero
+●
+Pruning methods
+●
+In theory, reduces model size and improves 
+performance
+●
+In practice, only small % in LLMs are zero-weights
+LLM
+Pruned 
+LLM
+14"
+How to prepare the data before RAG,"Before using external data in RAG (Relevance-Aware Retrieval), you need to ensure that your data meets certain criteria:
+
+1. **Data must fit inside the context window**: The text used for retrieval should be a subset of the entire document or corpus.
+2. **Data quality and relevance**: Ensure that the data is accurate, relevant, and up-to-date. This helps in improving the effectiveness of the search results.
+3. **Preprocessing**: Clean and preprocess your data to remove noise, stop words, and irrelevant information. Techniques like tokenization, stemming, and lemmatization can be applied to standardize the text.
+
+By preparing your data as mentioned above, you make it easier for RAG to retrieve relevant information from a large corpus of documents or texts efficiently.",585.77,"[Slide 28]
+Two considerations for using external data in RAG:
+1. Data must ﬁt inside context window
+Data preparation for vector store for RAG
+Prompt context limit 
+few 1000 tokens
+Single document too 
+large to ﬁt in window
+Split long sources into 
+short chunks
+28
+
+[Slide 30]
+Two considerations for using external data in RAG:
+1.
+Data must ﬁt inside context window
+2.
+Data must be in format that allows its relevance to be assessed at 
+inference time: Embedding vectors
+Process each chunk with LLM 
+to produce embedding vectors
+Data preparation for RAG
+X1
+X2
+X3
+X4
+X1
+X2
+X3
+X4
+X5
+X1
+X2
+X3
+X4
+X5
+X6
+X7
+X6
+X1
+X2
+X3
+X4
+X5
+30
+
+[Slide 29]
+Two considerations for using external data in RAG:
+1.
+Data must ﬁt inside context window
+2.
+Data must be in format that allows its relevance to be assessed at 
+inference time: Embedding vectors
+Data preparation for RAG
+Prompt text converted 
+to embedding vectors
+X1
+X2
+X3
+X4
+X5
+fox
+whale
+swim
+jumps
+book
+ﬁre
+Cosine similarity
+29
+
+[Slide 27]
+RAG integrates with many types of data sources
+External Information Sources
+●
+Documents
+●
+Wikis
+●
+Expert Systems
+●
+Web pages
+●
+Databases
+●
+Vector Store
+Query 
+encoder
+External 
+information 
+sources
+Retriever
+27"
+ما هى مصادر  البيانات أو المعلومات التى يستخدمها ال  RAG,"في سياق استخدام البيانات الخارجية في RAG، هناك عدة مصادر يمكن استخدامها:
+
+1. **الوثائق**: يشمل هذا الوثائق التي تستخدمها لبحث الأسئلة.
+2. **الWiki**: يشمل هذه المقالات الإلكترونية التي تحتوي على المعلومات المفيدة.
+3. **الأنظمة المتخصصة**: يشمل هذا النظم المعتمدة على الخبراء التي يمكن استخدامها في البحث عن المعلومات.
+4. **الصفحات على الإنترنت**: يشمل هذا البيانات من الصفحات على الإنترنت التي قد تكون ذات صلة بالأسئلة.
+5. **البيانات المجمعة**: يشمل هذه البيانات المجمع بين جميع المصادر السابقة.
+
+هذه المصادر تساعد RAG في البحث عن المعلومات المناسبة والفعالة، مما يقلل من الحاجة إلى موارد كبيرة ويزيد من فعالية البحث.",559.21,"[Slide 28]
+Two considerations for using external data in RAG:
+1. Data must ﬁt inside context window
+Data preparation for vector store for RAG
+Prompt context limit 
+few 1000 tokens
+Single document too 
+large to ﬁt in window
+Split long sources into 
+short chunks
+28
+
+[Slide 29]
+Two considerations for using external data in RAG:
+1.
+Data must ﬁt inside context window
+2.
+Data must be in format that allows its relevance to be assessed at 
+inference time: Embedding vectors
+Data preparation for RAG
+Prompt text converted 
+to embedding vectors
+X1
+X2
+X3
+X4
+X5
+fox
+whale
+swim
+jumps
+book
+ﬁre
+Cosine similarity
+29
+
+[Slide 27]
+RAG integrates with many types of data sources
+External Information Sources
+●
+Documents
+●
+Wikis
+●
+Expert Systems
+●
+Web pages
+●
+Databases
+●
+Vector Store
+Query 
+encoder
+External 
+information 
+sources
+Retriever
+27
+
+[Slide 30]
+Two considerations for using external data in RAG:
+1.
+Data must ﬁt inside context window
+2.
+Data must be in format that allows its relevance to be assessed at 
+inference time: Embedding vectors
+Process each chunk with LLM 
+to produce embedding vectors
+Data preparation for RAG
+X1
+X2
+X3
+X4
+X1
+X2
+X3
+X4
+X5
+X1
+X2
+X3
+X4
+X5
+X6
+X7
+X6
+X1
+X2
+X3
+X4
+X5
+30"
+"i want to know what the chain of thought is, and give me examples","The chain of thought refers to a logical sequence of reasoning that leads from an initial observation or premise to a conclusion. It involves breaking down complex problems into simpler steps and using specific evidence or facts to support each step.
+
+### Examples:
+
+1. **Example 1:**
+   - **Premise:** A pear floats in water.
+   - **Step-by-Step Chain of Thought:**
+     1. The density of a pear is about 0.6 g/cm³, which is less than the density of water (approximately 1 g/cm³).
+     2. Since the pear's density is lower than that of water, it will float.
+     3. Therefore, the answer is no.
+
+   - **Conclusion:** The chain of thought shows a clear logical progression from the premise to the conclusion.
+
+2. **Example 2:**
+   - **Premise:** Would a gold ring sink in a swimming pool?
+   - **Step-by-Step Chain of Thought:**
+     1. The density of gold is approximately 19.3 g/cm³, which is much greater than the density of water (approximately 1 g/cm³).
+     2. Since the density of gold is higher than that of water, it will sink.
+     3. Therefore, the answer is yes.
+
+   - **Conclusion:** This example demonstrates how a chain of thought can be used to determine whether an object will float or sink based on its density relative to water.
+
+### How Chain of Thought Can Be Used:
+
+- **Identifying Logical Steps:** By breaking down complex problems into smaller steps, you can identify the logical reasoning involved in solving them.
+  
+- **Evaluating Arguments:** You can evaluate arguments by tracing their chain of thought and checking if each step logically follows from the previous one.
+
+- **Improving Communication:** Chain of thought can be used to explain your reasoning clearly and concisely. It helps others understand how you arrived at a conclusion, which is particularly useful in academic or professional settings where clear communication is key.
+
+### Conclusion:
+
+The chain of thought is an essential tool for logical reasoning and problem-solving. By following this method, you can systematically break down complex problems into manageable steps, making it easier to find solutions and communicate your reasoning effectively.",844.15,"[Slide 40]
+Humans take a step-by-step approach to solving 
+complex problems
+Roger has 5 tennis balls. He 
+buys 2 more cans of tennis 
+balls. Each can has 3 tennis 
+balls. How many tennis balls 
+does he have now?
+Step 1: 2 cans of 3 tennis balls each is 6 tennis balls.
+Step 2: 5 + 6 = 11
+Start: Roger started with 5 balls.
+Step 1: 2 cans of 3 tennis balls each is 6 tennis balls.
+Step 2: 5 + 6 = 11
+End: The answer is 11
+Reasoning steps
+“Chain of thought”
+40
+
+[Slide 41]
+Chain-of-Thought Prompting can help LLMs reason
+Q: Roger has 5 tennis balls. 
+He buys 2 more cans of tennis 
+balls. Each can has 3 tennis 
+balls. How many tennis balls 
+does he have now?
+A: Roger started with 5 
+balls. 2 cans of 3 tennis 
+balls each is 6 tennis balls.
+5 + 6 = 11.The answer is 11.
+Q: The cafeteria had 23 
+apples. If they used 20 to 
+make lunch and bought 6 more, 
+how many apples do they have?
+LLM
+Q: Roger has 5 tennis balls.
+...
+...
+...
+how many apples do they have?
+A: The cafeteria had 23 
+apples originally. They used
+20 to make lunch. So they had 
+23-20 = 3. They bought 6 more
+apples, so they have 3 + 6 =
+9. The answer is 9. ✔
+Prompt
+Source: Wei et al. 2022, “Chain-of-Thought Prompting Elicits Reasoning in Large Language Models”
+Completion
+Model
+41
+
+[Slide 38]
+Helping LLMs reason and 
+plan with Chain-of-Thought 
+Prompting
+38
+
+[Slide 42]
+Chain-of-Thought Prompting can help LLMs reason
+Q: Yes or no: Would a pear 
+sink in water?
+A: The density of a pear is 
+about 0.6 g/cm^3, which is 
+less than water. Thus, a pear 
+would float. So the answer is 
+no.
+Q. Yes or no: Would a gold 
+ring sink to the bottom of a 
+swimming pool?
+LLM
+Q: Yes or no: Would a pear 
+sink in water?
+...
+...
+So the answer is no.
+The density of gold is 19.3 
+g/cm^3, which is much greater 
+than the density of water.
+Therefore, a gold ring would 
+sink to the bottom of a 
+swimming pool. So the answer 
+is yes.
+Prompt
+Source: Wei et al. 2022, “Chain-of-Thought Prompting Elicits Reasoning in Large Language Models”
+Completion
+Model
+42"
+thank you,"You're welcome! If you have any more questions or need further clarification, feel free to ask.",435.29,"[Slide 35]
+Having an LLM initiate a clothing return
+ShopBot
+Sure, its tim.b@email.net
+Thank you! I’ve just sent 
+the shipping label to your 
+email address. Please 
+return your jeans within 
+the next 5 days.
+T
+Great, thank you!
+T
+You’re welcome!
+API call to the
+shipper
+35
+
+[Slide 33]
+Having an LLM initiate a clothing return
+ShopBot
+Of course, I’d be happy 
+to help you. Can you tell 
+me your order number?
+Hi there! How can I help 
+you today?
+I need to return a pair of 
+jeans that I purchased
+T
+Sure, it’s 21104.
+T
+33
+
+[Slide 63]
+Building up the ReAct prompt
+Question
+Thought
+Action
+Observation
+Question 
+Thought
+Action 
+Observation
+ReAct example
+Instructions
+Question to be 
+answered
+LLM
+(could be more 
+than one 
+example)
+63
+
+[Slide 19]
+LLM-powered applications
+LLM
+User Prompt
+Completion
+19"
